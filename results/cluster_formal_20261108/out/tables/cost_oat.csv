@@ -1,0 +1,17 @@
+parameter,level,value,pareto_designs,same_front_as_default,device_on_front
+crowd_manager_per_event,low,50.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+crowd_manager_per_event,high,200.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+manager_training_per_year,low,0.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+manager_training_per_year,high,400.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+events_per_year,low,20.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+events_per_year,high,80.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+led_install,low,10000.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+led_install,high,60000.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+led_maintenance_per_year,low,500.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+led_maintenance_per_year,high,4000.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+barrier_purchase,low,2000.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+barrier_purchase,high,8000.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+barrier_setup_per_event,low,25.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+barrier_setup_per_event,high,150.0,6 mgr; 6 mgr + LED; 15 mgr + barriers,False,True
+lifetime_years,low,5.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True
+lifetime_years,high,15.0,6 mgr; 6 mgr + LED; 6 mgr + barriers; 15 mgr + barriers,True,True

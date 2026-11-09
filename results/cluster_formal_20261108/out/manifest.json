@@ -1,0 +1,203 @@
+{
+  "code_hash": "aa1b1a84a425539fa40ae6e840cd5d185cf9d6affbb045e623fa1c60f6d985c5",
+  "config": {
+    "phys": {
+      "dt": 0.1,
+      "q": 0.96,
+      "v_emergency": 1.34,
+      "v_normal": 1.1,
+      "stair_factor": 0.3283582089552239,
+      "stair_factor_normal": 0.58,
+      "row_factor": 0.5,
+      "t_max": 1800.0,
+      "empty_threshold": 0.0,
+      "population_order_seed": 2026,
+      "walk_model": "erlang"
+    },
+    "geo": {
+      "w_aisle": 1.2,
+      "w_mezz_door": 1.2,
+      "w_foyer_door": 1.3,
+      "w_main_exterior": 7.0,
+      "n_main_doors": 5,
+      "w_side_door": 1.2,
+      "w_side_stair": 1.2,
+      "w_balcony_stair": 1.3,
+      "w_stage_stair": 1.2,
+      "w_stage_door_mezz": 1.0,
+      "w_corridor": 2.2,
+      "w_portico": 3.0,
+      "l_orchestra": 12.0,
+      "l_mezz": 10.0,
+      "l_balcony": 14.0,
+      "l_row_half": 4.0,
+      "l_wheelchair_access": 2.0,
+      "l_access": 3.0,
+      "l_door": 0.5,
+      "l_corridor_seg": 8.5,
+      "l_foyer": 10.0,
+      "l_portico": 15.0,
+      "l_portico_detour": 40.0,
+      "l_balcony_stair": 5.0,
+      "l_stage_stair": 8.0,
+      "l_mezz_lateral": 12.0,
+      "l_balcony_lateral": 15.0,
+      "a_mezz_aisle": 30.0,
+      "a_balcony_aisle": 20.0,
+      "a_foyer": 160.0,
+      "seat_row_capacity": false,
+      "q_row": 1.0,
+      "w_row": 0.55,
+      "row_ends_orchestra": 190,
+      "row_ends_mezz": 112,
+      "row_ends_balcony": 18
+    },
+    "pop": {
+      "n_total": 1329,
+      "orchestra": [
+        132,
+        263,
+        132
+      ],
+      "mezzanine": [
+        162,
+        162,
+        162
+      ],
+      "balcony": [
+        105,
+        106,
+        105
+      ],
+      "wheelchairs": 3
+    },
+    "costs": {
+      "crowd_manager_per_event": 100.0,
+      "manager_training_per_year": 150.0,
+      "events_per_year": 40,
+      "led_install": 30000.0,
+      "led_maintenance_per_year": 1500.0,
+      "barrier_purchase": 4000.0,
+      "barrier_setup_per_event": 50.0,
+      "lifetime_years": 10,
+      "discount_rate": 0.0
+    }
+  },
+  "reaction_specs": {
+    "concert_emergency": {
+      "family": "lognormal",
+      "mu": 3.93,
+      "sigma": 0.44
+    },
+    "normal_dismissal": {
+      "family": "truncnorm",
+      "mu": 35.0,
+      "sigma": 20.0,
+      "low": 0.0,
+      "high": 120.0
+    },
+    "lecture_emergency": {
+      "family": "gamma",
+      "shape": 3.0,
+      "scale": 24.5
+    }
+  },
+  "behaviours": {
+    "concert_self": {
+      "name": "concert_self",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 0.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "concert_managed": {
+      "name": "concert_managed",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 2.5,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "concert_led": {
+      "name": "concert_led",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 4.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "normal": {
+      "name": "normal",
+      "beta_dist": 0.2,
+      "beta_habit": 3.0,
+      "beta_queue": 0.05,
+      "beta_guide": 0.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "lecture": {
+      "name": "lecture",
+      "beta_dist": 0.5,
+      "beta_habit": 0.3,
+      "beta_queue": 0.3,
+      "beta_guide": 0.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "lecture_led": {
+      "name": "lecture_led",
+      "beta_dist": 0.5,
+      "beta_habit": 0.3,
+      "beta_queue": 0.3,
+      "beta_guide": 4.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "wheelchair": {
+      "name": "wheelchair",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 10.0,
+      "speed_factor": 0.5149253731343283,
+      "uses_stairs": false,
+      "delay": 10.0
+    }
+  },
+  "managers": {
+    "law_min": 6,
+    "radius_m": 10.0,
+    "p_follow": 0.9
+  },
+  "wheelchair_seats": {
+    "M2": 3
+  },
+  "seeds": {
+    "main": 26071101,
+    "controls": 26071102,
+    "holdout": 26071103,
+    "obstructions": 26071104,
+    "manager_robustness": 26071105,
+    "wheelchairs": 26071106,
+    "cost": 26071107,
+    "placement": 26071108,
+    "screen": 26071109,
+    "retest": 26071110,
+    "parameters": 26071111
+  },
+  "profile": "formal",
+  "batch_size": 25,
+  "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+  "commit": "9d76e442fd31b99a770485548fcb504b56031cc4"
+}

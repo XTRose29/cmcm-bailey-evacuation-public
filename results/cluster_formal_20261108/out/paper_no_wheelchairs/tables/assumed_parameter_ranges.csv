@@ -1,0 +1,18 @@
+parameter,key,low,nominal,high,sampling,source
+specific flow q (p/m/s),q,0.8,0.96,1.3,uniform,ASSUMED RANGE including prior 1.3 baseline
+walking speed (×),v,0.885,1.0,1.115,uniform,ASSUMED RANGE around baseline speeds
+stair speed factor,stair_factor,0.22835820895522388,0.3283582089552239,0.4283582089552239,uniform,ASSUMED RANGE
+all cell lengths (×),len,0.8,1.0,1.2,uniform,ASSUMED RANGE
+main doors total width (m),w_main_exterior,5.6,7.0,8.4,uniform,ASSUMED RANGE
+side doors S width (m),w_side_door,1.0,1.2,1.5,uniform,ASSUMED RANGE
+side stairs width (m),w_side_stair,1.0,1.2,1.5,uniform,ASSUMED RANGE
+stage stairs ST width (m),w_stage_stair,1.0,1.2,1.5,uniform,ASSUMED RANGE
+mezz. stage doors width (m),w_stage_door_mezz,0.8,1.0,1.2,uniform,ASSUMED RANGE
+foyer doors F width (m),w_foyer_door,1.1,1.3,1.5,uniform,ASSUMED RANGE
+β1 distance aversion (×),beta_dist,0.5,1.0,2.0,log-uniform,ASSUMED RANGE
+β2 main-entrance habit (×),beta_habit,0.5,1.0,1.5,log-uniform,ASSUMED RANGE
+β3 queue avoidance (×),beta_queue,0.5,1.0,2.0,log-uniform,ASSUMED RANGE
+β4 instruction weight (×),beta_guide,0.5,1.0,1.5,log-uniform,ASSUMED RANGE
+manager guidance radius (m),radius_m,5.0,10.0,15.0,uniform,ASSUMED sensitivity around literature-adapted 10 m
+share of instructed people who comply,p_follow,0.75,0.9,0.95,uniform,ASSUMED RANGE
+pre-movement time scale (×),prep,0.5,1.0,2.0,log-uniform,ASSUMED RANGE

@@ -1,0 +1,61 @@
+{
+  "status": "best among sampled layouts after independent retesting; not a global optimum",
+  "layout": "layout_0094",
+  "manager_nodes": [
+    "A5",
+    "B3",
+    "C1",
+    "C10",
+    "M2",
+    "S2"
+  ],
+  "managers": 6,
+  "manager_radius_m": 10.0,
+  "manager_p_follow": 0.9,
+  "scenario": {
+    "name": "concert",
+    "question": "Q2",
+    "zh": "Concert emergency with Crowd Managers (baseline)",
+    "v_key": "v_emergency",
+    "prep_key": "concert_emergency",
+    "closed": [],
+    "barriers": [],
+    "blocked": [],
+    "discovery": "known",
+    "population": "managers",
+    "compliance": null,
+    "managers": null,
+    "manager_nodes": null,
+    "manager_radius_m": null,
+    "manager_p_follow": null,
+    "wheelchairs": 3,
+    "wheelchair_guide": "nearest",
+    "broadcast_delay": 20.0
+  },
+  "retest_summary": {
+    "layout": "layout_0094",
+    "nodes": "A5|B3|C1|C10|M2|S2",
+    "K": 30,
+    "timeout_rate": 0.0,
+    "restricted_mean_T": 259.5866666666667,
+    "restricted_p95_T": 318.6,
+    "T_mean": 259.5866666666667,
+    "T_mean_se": 6.065234894833172,
+    "P_under_180": 0.0,
+    "complete_runs": 30,
+    "completed_only_mean": 259.5866666666667
+  },
+  "screen_finalists": [
+    "layout_0135",
+    "layout_0142",
+    "layout_0036",
+    "layout_0183",
+    "layout_0039",
+    "layout_0022",
+    "layout_0094",
+    "layout_0095",
+    "layout_0043",
+    "layout_0033"
+  ],
+  "evaluation_warning": "Winner selected using retest results; use fresh holdout seeds for final reporting."
+}

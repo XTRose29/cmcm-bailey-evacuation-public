@@ -1,0 +1,1870 @@
+{
+  "signature": "a1631a9c6307e4203c890769e9cbe9396e2b179c21cfd09090c0c2d55e4645c1",
+  "scenario": {
+    "name": "concert",
+    "question": "Q2",
+    "zh": "Concert emergency with Crowd Managers (baseline)",
+    "v_key": "v_emergency",
+    "prep_key": "concert_emergency",
+    "closed": [],
+    "barriers": [],
+    "blocked": [],
+    "discovery": "known",
+    "population": "managers",
+    "compliance": null,
+    "managers": null,
+    "manager_nodes": null,
+    "manager_radius_m": null,
+    "manager_p_follow": null,
+    "wheelchairs": 3,
+    "wheelchair_guide": "nearest",
+    "broadcast_delay": 20.0
+  },
+  "config": {
+    "phys": {
+      "dt": 0.1,
+      "q": 0.96,
+      "v_emergency": 1.34,
+      "v_normal": 1.1,
+      "stair_factor": 0.3283582089552239,
+      "stair_factor_normal": 0.58,
+      "row_factor": 0.5,
+      "t_max": 1800.0,
+      "empty_threshold": 0.0,
+      "population_order_seed": 2026,
+      "walk_model": "erlang"
+    },
+    "geo": {
+      "w_aisle": 1.2,
+      "w_mezz_door": 1.2,
+      "w_foyer_door": 1.3,
+      "w_main_exterior": 7.0,
+      "n_main_doors": 5,
+      "w_side_door": 1.2,
+      "w_side_stair": 1.2,
+      "w_balcony_stair": 1.3,
+      "w_stage_stair": 1.2,
+      "w_stage_door_mezz": 1.0,
+      "w_corridor": 2.2,
+      "w_portico": 3.0,
+      "l_orchestra": 12.0,
+      "l_mezz": 10.0,
+      "l_balcony": 14.0,
+      "l_row_half": 4.0,
+      "l_wheelchair_access": 2.0,
+      "l_access": 3.0,
+      "l_door": 0.5,
+      "l_corridor_seg": 8.5,
+      "l_foyer": 10.0,
+      "l_portico": 15.0,
+      "l_portico_detour": 40.0,
+      "l_balcony_stair": 5.0,
+      "l_stage_stair": 8.0,
+      "l_mezz_lateral": 12.0,
+      "l_balcony_lateral": 15.0,
+      "a_mezz_aisle": 30.0,
+      "a_balcony_aisle": 20.0,
+      "a_foyer": 160.0,
+      "seat_row_capacity": false,
+      "q_row": 1.0,
+      "w_row": 0.55,
+      "row_ends_orchestra": 190,
+      "row_ends_mezz": 112,
+      "row_ends_balcony": 18
+    },
+    "pop": {
+      "n_total": 1329,
+      "orchestra": [
+        132,
+        263,
+        132
+      ],
+      "mezzanine": [
+        162,
+        162,
+        162
+      ],
+      "balcony": [
+        105,
+        106,
+        105
+      ],
+      "wheelchairs": 3
+    },
+    "costs": {
+      "crowd_manager_per_event": 100.0,
+      "manager_training_per_year": 150.0,
+      "events_per_year": 40,
+      "led_install": 30000.0,
+      "led_maintenance_per_year": 1500.0,
+      "barrier_purchase": 4000.0,
+      "barrier_setup_per_event": 50.0,
+      "lifetime_years": 10,
+      "discount_rate": 0.0
+    }
+  },
+  "managers": {
+    "law_min": 6,
+    "radius_m": 10.0,
+    "p_follow": 0.9
+  },
+  "behaviours": {
+    "concert_self": {
+      "name": "concert_self",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 0.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "concert_managed": {
+      "name": "concert_managed",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 2.5,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "concert_led": {
+      "name": "concert_led",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 4.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "normal": {
+      "name": "normal",
+      "beta_dist": 0.2,
+      "beta_habit": 3.0,
+      "beta_queue": 0.05,
+      "beta_guide": 0.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "lecture": {
+      "name": "lecture",
+      "beta_dist": 0.5,
+      "beta_habit": 0.3,
+      "beta_queue": 0.3,
+      "beta_guide": 0.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "lecture_led": {
+      "name": "lecture_led",
+      "beta_dist": 0.5,
+      "beta_habit": 0.3,
+      "beta_queue": 0.3,
+      "beta_guide": 4.0,
+      "speed_factor": 1.0,
+      "uses_stairs": true,
+      "delay": 0.0
+    },
+    "wheelchair": {
+      "name": "wheelchair",
+      "beta_dist": 0.25,
+      "beta_habit": 2.0,
+      "beta_queue": 0.1,
+      "beta_guide": 10.0,
+      "speed_factor": 0.5149253731343283,
+      "uses_stairs": false,
+      "delay": 10.0
+    }
+  },
+  "reaction_specs": {
+    "concert_emergency": {
+      "family": "lognormal",
+      "mu": 3.93,
+      "sigma": 0.44
+    },
+    "normal_dismissal": {
+      "family": "truncnorm",
+      "mu": 35.0,
+      "sigma": 20.0,
+      "low": 0.0,
+      "high": 120.0
+    },
+    "lecture_emergency": {
+      "family": "gamma",
+      "shape": 3.0,
+      "scale": 24.5
+    }
+  },
+  "service_dispersion": 0.5,
+  "wheelchair_seats": {
+    "M2": 3
+  },
+  "wheelchair_source": {
+    "zone": "M2",
+    "location": "rear central mezzanine ADA platform near rows DD/EE, seats 408-411",
+    "verified_spaces": 2,
+    "modeled_people": 3,
+    "url": "https://www.cornellconcertseries.com/accessibility",
+    "status": "Two fixed spaces verified; third person in the same area is a user-approved assumption."
+  },
+  "code_hash": "6dd262d04273a4306917eaba38d44e27f1c972f099ae860a08284661a06730db",
+  "candidate_nodes": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "B1",
+    "B2",
+    "B3",
+    "C1",
+    "C10",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D8",
+    "D9",
+    "F1",
+    "F2",
+    "F3",
+    "FOY",
+    "M1",
+    "M2",
+    "M3",
+    "O1",
+    "O2",
+    "O3",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "candidates": 200,
+  "screen_reps": 3,
+  "top_k": 10,
+  "retest_reps": 30,
+  "placement_seed": 26071108,
+  "screen_seed": 26071109,
+  "retest_seed": 26071110,
+  "reference_layout": "layout_0000",
+  "objective": "timeout rate, restricted mean T, restricted p95 T (ascending)",
+  "layouts": {
+    "layout_0000": [
+      "B1",
+      "B3",
+      "FOY",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "layout_0001": [
+      "A4",
+      "B3",
+      "D2",
+      "D3",
+      "M3",
+      "S2"
+    ],
+    "layout_0002": [
+      "C10",
+      "C2",
+      "C5",
+      "D1",
+      "F3",
+      "S4"
+    ],
+    "layout_0003": [
+      "A4",
+      "C2",
+      "C7",
+      "D3",
+      "D9",
+      "S3"
+    ],
+    "layout_0004": [
+      "A2",
+      "C10",
+      "C3",
+      "D2",
+      "D8",
+      "D9"
+    ],
+    "layout_0005": [
+      "A2",
+      "B2",
+      "B3",
+      "C2",
+      "C5",
+      "M2"
+    ],
+    "layout_0006": [
+      "B1",
+      "C2",
+      "C8",
+      "D2",
+      "D7",
+      "F3"
+    ],
+    "layout_0007": [
+      "B1",
+      "D4",
+      "F1",
+      "F3",
+      "M3",
+      "S4"
+    ],
+    "layout_0008": [
+      "B1",
+      "D1",
+      "F2",
+      "O2",
+      "S1",
+      "S2"
+    ],
+    "layout_0009": [
+      "A4",
+      "C3",
+      "C6",
+      "D1",
+      "F1",
+      "M3"
+    ],
+    "layout_0010": [
+      "A2",
+      "B1",
+      "C4",
+      "C6",
+      "D1",
+      "O1"
+    ],
+    "layout_0011": [
+      "C1",
+      "C10",
+      "C3",
+      "C5",
+      "D1",
+      "D4"
+    ],
+    "layout_0012": [
+      "A1",
+      "B2",
+      "C7",
+      "D6",
+      "M3",
+      "S1"
+    ],
+    "layout_0013": [
+      "A5",
+      "C2",
+      "C9",
+      "D5",
+      "D8",
+      "F1"
+    ],
+    "layout_0014": [
+      "A4",
+      "D1",
+      "F2",
+      "O3",
+      "S2",
+      "S3"
+    ],
+    "layout_0015": [
+      "C1",
+      "C4",
+      "C5",
+      "D7",
+      "D9",
+      "S3"
+    ],
+    "layout_0016": [
+      "B3",
+      "D3",
+      "D7",
+      "D9",
+      "FOY",
+      "M1"
+    ],
+    "layout_0017": [
+      "A4",
+      "A5",
+      "D1",
+      "D3",
+      "D7",
+      "S2"
+    ],
+    "layout_0018": [
+      "A5",
+      "C1",
+      "C10",
+      "D6",
+      "F3",
+      "M1"
+    ],
+    "layout_0019": [
+      "A3",
+      "A6",
+      "D1",
+      "D3",
+      "M1",
+      "O1"
+    ],
+    "layout_0020": [
+      "A6",
+      "D6",
+      "D7",
+      "M3",
+      "O3",
+      "S2"
+    ],
+    "layout_0021": [
+      "A3",
+      "A6",
+      "C2",
+      "D8",
+      "M2",
+      "S3"
+    ],
+    "layout_0022": [
+      "C4",
+      "D4",
+      "D7",
+      "F1",
+      "FOY",
+      "M2"
+    ],
+    "layout_0023": [
+      "A2",
+      "C2",
+      "C5",
+      "C6",
+      "C8",
+      "D3"
+    ],
+    "layout_0024": [
+      "D4",
+      "F2",
+      "M2",
+      "O1",
+      "O2",
+      "S2"
+    ],
+    "layout_0025": [
+      "C3",
+      "C7",
+      "D1",
+      "D9",
+      "S2",
+      "S4"
+    ],
+    "layout_0026": [
+      "C10",
+      "C4",
+      "C8",
+      "M2",
+      "O1",
+      "S3"
+    ],
+    "layout_0027": [
+      "C6",
+      "C8",
+      "C9",
+      "D1",
+      "M2",
+      "S3"
+    ],
+    "layout_0028": [
+      "A1",
+      "C7",
+      "D4",
+      "D8",
+      "F3",
+      "S3"
+    ],
+    "layout_0029": [
+      "A2",
+      "A4",
+      "B1",
+      "C8",
+      "S2",
+      "S3"
+    ],
+    "layout_0030": [
+      "A3",
+      "C2",
+      "C8",
+      "D8",
+      "F2",
+      "S3"
+    ],
+    "layout_0031": [
+      "A4",
+      "A6",
+      "B2",
+      "D1",
+      "D2",
+      "D7"
+    ],
+    "layout_0032": [
+      "A4",
+      "A6",
+      "C1",
+      "C7",
+      "D2",
+      "S3"
+    ],
+    "layout_0033": [
+      "B2",
+      "C10",
+      "C5",
+      "C6",
+      "D2",
+      "F2"
+    ],
+    "layout_0034": [
+      "C1",
+      "D4",
+      "D7",
+      "D9",
+      "F2",
+      "F3"
+    ],
+    "layout_0035": [
+      "A4",
+      "C10",
+      "C8",
+      "C9",
+      "D1",
+      "D6"
+    ],
+    "layout_0036": [
+      "B3",
+      "C7",
+      "C8",
+      "D8",
+      "FOY",
+      "S1"
+    ],
+    "layout_0037": [
+      "A2",
+      "A4",
+      "A6",
+      "C1",
+      "C6",
+      "D9"
+    ],
+    "layout_0038": [
+      "A4",
+      "B1",
+      "C4",
+      "C5",
+      "C9",
+      "F1"
+    ],
+    "layout_0039": [
+      "A5",
+      "A6",
+      "C1",
+      "C8",
+      "C9",
+      "M2"
+    ],
+    "layout_0040": [
+      "A2",
+      "C5",
+      "D4",
+      "D7",
+      "D8",
+      "M3"
+    ],
+    "layout_0041": [
+      "C10",
+      "C4",
+      "D7",
+      "M2",
+      "O3",
+      "S3"
+    ],
+    "layout_0042": [
+      "B2",
+      "D3",
+      "D6",
+      "F1",
+      "M3",
+      "O3"
+    ],
+    "layout_0043": [
+      "A3",
+      "D6",
+      "D8",
+      "D9",
+      "F2",
+      "S1"
+    ],
+    "layout_0044": [
+      "A4",
+      "A6",
+      "C6",
+      "C7",
+      "D9",
+      "S3"
+    ],
+    "layout_0045": [
+      "A1",
+      "B1",
+      "B2",
+      "D9",
+      "FOY",
+      "M2"
+    ],
+    "layout_0046": [
+      "A4",
+      "B3",
+      "D3",
+      "D6",
+      "M1",
+      "S1"
+    ],
+    "layout_0047": [
+      "A4",
+      "B2",
+      "C2",
+      "C9",
+      "D4",
+      "F2"
+    ],
+    "layout_0048": [
+      "A1",
+      "A6",
+      "D8",
+      "D9",
+      "F1",
+      "S1"
+    ],
+    "layout_0049": [
+      "A1",
+      "C1",
+      "C5",
+      "D6",
+      "M1",
+      "O2"
+    ],
+    "layout_0050": [
+      "A2",
+      "A3",
+      "B3",
+      "C8",
+      "D1",
+      "S2"
+    ],
+    "layout_0051": [
+      "C1",
+      "C5",
+      "D3",
+      "F1",
+      "O1",
+      "O2"
+    ],
+    "layout_0052": [
+      "B3",
+      "C2",
+      "C6",
+      "C8",
+      "C9",
+      "M2"
+    ],
+    "layout_0053": [
+      "A2",
+      "B1",
+      "C2",
+      "C6",
+      "C7",
+      "F2"
+    ],
+    "layout_0054": [
+      "B1",
+      "C4",
+      "C9",
+      "D2",
+      "D6",
+      "O3"
+    ],
+    "layout_0055": [
+      "C6",
+      "C9",
+      "D7",
+      "F2",
+      "O3",
+      "S4"
+    ],
+    "layout_0056": [
+      "C1",
+      "C2",
+      "C4",
+      "D1",
+      "F1",
+      "S2"
+    ],
+    "layout_0057": [
+      "A3",
+      "D6",
+      "M3",
+      "O2",
+      "S1",
+      "S4"
+    ],
+    "layout_0058": [
+      "B3",
+      "C1",
+      "C3",
+      "D8",
+      "S1",
+      "S2"
+    ],
+    "layout_0059": [
+      "A3",
+      "A4",
+      "A5",
+      "C4",
+      "D5",
+      "S2"
+    ],
+    "layout_0060": [
+      "B1",
+      "D1",
+      "D4",
+      "D6",
+      "F1",
+      "S2"
+    ],
+    "layout_0061": [
+      "A3",
+      "A4",
+      "B3",
+      "C10",
+      "D5",
+      "D6"
+    ],
+    "layout_0062": [
+      "C2",
+      "C6",
+      "C7",
+      "D3",
+      "M1",
+      "S4"
+    ],
+    "layout_0063": [
+      "A1",
+      "D2",
+      "D7",
+      "F1",
+      "O2",
+      "O3"
+    ],
+    "layout_0064": [
+      "A3",
+      "C2",
+      "D3",
+      "D5",
+      "FOY",
+      "S1"
+    ],
+    "layout_0065": [
+      "B1",
+      "C1",
+      "C10",
+      "C4",
+      "D8",
+      "S2"
+    ],
+    "layout_0066": [
+      "B3",
+      "D2",
+      "F3",
+      "M3",
+      "S1",
+      "S4"
+    ],
+    "layout_0067": [
+      "A1",
+      "A4",
+      "C8",
+      "F1",
+      "F2",
+      "M2"
+    ],
+    "layout_0068": [
+      "B2",
+      "C3",
+      "D1",
+      "D2",
+      "D4",
+      "O2"
+    ],
+    "layout_0069": [
+      "B3",
+      "C1",
+      "D3",
+      "D4",
+      "D7",
+      "F2"
+    ],
+    "layout_0070": [
+      "A1",
+      "A3",
+      "A6",
+      "D3",
+      "D4",
+      "D5"
+    ],
+    "layout_0071": [
+      "B2",
+      "C2",
+      "C4",
+      "C6",
+      "D1",
+      "D2"
+    ],
+    "layout_0072": [
+      "A2",
+      "A4",
+      "C5",
+      "C8",
+      "D3",
+      "D5"
+    ],
+    "layout_0073": [
+      "A3",
+      "C3",
+      "D4",
+      "D6",
+      "D9",
+      "O1"
+    ],
+    "layout_0074": [
+      "A6",
+      "C10",
+      "C6",
+      "D1",
+      "D2",
+      "S2"
+    ],
+    "layout_0075": [
+      "A5",
+      "C1",
+      "C3",
+      "D1",
+      "F2",
+      "S2"
+    ],
+    "layout_0076": [
+      "C1",
+      "C4",
+      "D9",
+      "O3",
+      "S2",
+      "S3"
+    ],
+    "layout_0077": [
+      "A2",
+      "C3",
+      "C6",
+      "C7",
+      "O2",
+      "O3"
+    ],
+    "layout_0078": [
+      "A1",
+      "C1",
+      "C5",
+      "D2",
+      "D3",
+      "O2"
+    ],
+    "layout_0079": [
+      "B1",
+      "C9",
+      "D3",
+      "D5",
+      "F3",
+      "M2"
+    ],
+    "layout_0080": [
+      "A3",
+      "B1",
+      "C4",
+      "M1",
+      "M3",
+      "O2"
+    ],
+    "layout_0081": [
+      "C9",
+      "D2",
+      "D3",
+      "D6",
+      "F1",
+      "O3"
+    ],
+    "layout_0082": [
+      "A2",
+      "B2",
+      "B3",
+      "D3",
+      "F3",
+      "S3"
+    ],
+    "layout_0083": [
+      "B1",
+      "C1",
+      "C8",
+      "C9",
+      "O2",
+      "S2"
+    ],
+    "layout_0084": [
+      "B3",
+      "C7",
+      "D8",
+      "F2",
+      "M1",
+      "S3"
+    ],
+    "layout_0085": [
+      "B3",
+      "C2",
+      "C7",
+      "O1",
+      "S2",
+      "S4"
+    ],
+    "layout_0086": [
+      "A1",
+      "B1",
+      "C1",
+      "D1",
+      "D9",
+      "S1"
+    ],
+    "layout_0087": [
+      "A4",
+      "A6",
+      "B3",
+      "C4",
+      "C5",
+      "FOY"
+    ],
+    "layout_0088": [
+      "B2",
+      "C3",
+      "C4",
+      "D1",
+      "M2",
+      "O2"
+    ],
+    "layout_0089": [
+      "A1",
+      "C9",
+      "D4",
+      "FOY",
+      "M3",
+      "S3"
+    ],
+    "layout_0090": [
+      "A2",
+      "C2",
+      "C6",
+      "C8",
+      "O1",
+      "O2"
+    ],
+    "layout_0091": [
+      "A1",
+      "B1",
+      "C5",
+      "D1",
+      "O3",
+      "S4"
+    ],
+    "layout_0092": [
+      "A4",
+      "B3",
+      "C1",
+      "D1",
+      "D6",
+      "O1"
+    ],
+    "layout_0093": [
+      "B3",
+      "C2",
+      "C9",
+      "F1",
+      "O3",
+      "S1"
+    ],
+    "layout_0094": [
+      "A5",
+      "B3",
+      "C1",
+      "C10",
+      "M2",
+      "S2"
+    ],
+    "layout_0095": [
+      "B3",
+      "D6",
+      "D8",
+      "M3",
+      "O3",
+      "S1"
+    ],
+    "layout_0096": [
+      "C1",
+      "C10",
+      "D5",
+      "D6",
+      "F3",
+      "O3"
+    ],
+    "layout_0097": [
+      "B1",
+      "C10",
+      "C9",
+      "F3",
+      "FOY",
+      "M3"
+    ],
+    "layout_0098": [
+      "A4",
+      "A5",
+      "C10",
+      "M3",
+      "S2",
+      "S4"
+    ],
+    "layout_0099": [
+      "C2",
+      "C3",
+      "C5",
+      "D6",
+      "F2",
+      "M2"
+    ],
+    "layout_0100": [
+      "A5",
+      "B2",
+      "C4",
+      "D9",
+      "M1",
+      "M2"
+    ],
+    "layout_0101": [
+      "A3",
+      "C3",
+      "C8",
+      "D1",
+      "FOY",
+      "M2"
+    ],
+    "layout_0102": [
+      "C2",
+      "D4",
+      "D8",
+      "M2",
+      "O1",
+      "S1"
+    ],
+    "layout_0103": [
+      "A3",
+      "B3",
+      "C7",
+      "F2",
+      "S2",
+      "S4"
+    ],
+    "layout_0104": [
+      "A2",
+      "A5",
+      "C7",
+      "D6",
+      "D9",
+      "S1"
+    ],
+    "layout_0105": [
+      "A1",
+      "B1",
+      "B3",
+      "D9",
+      "O1",
+      "O3"
+    ],
+    "layout_0106": [
+      "D1",
+      "F3",
+      "M2",
+      "O2",
+      "O3",
+      "S1"
+    ],
+    "layout_0107": [
+      "A3",
+      "C3",
+      "D1",
+      "FOY",
+      "O1",
+      "S4"
+    ],
+    "layout_0108": [
+      "A3",
+      "C7",
+      "F1",
+      "FOY",
+      "M2",
+      "S3"
+    ],
+    "layout_0109": [
+      "A3",
+      "C2",
+      "C9",
+      "F3",
+      "S1",
+      "S3"
+    ],
+    "layout_0110": [
+      "C10",
+      "C4",
+      "C9",
+      "M1",
+      "O3",
+      "S1"
+    ],
+    "layout_0111": [
+      "A2",
+      "C5",
+      "D4",
+      "D7",
+      "S2",
+      "S3"
+    ],
+    "layout_0112": [
+      "B1",
+      "B2",
+      "B3",
+      "D8",
+      "F1",
+      "M2"
+    ],
+    "layout_0113": [
+      "A4",
+      "A6",
+      "B1",
+      "C5",
+      "D2",
+      "D3"
+    ],
+    "layout_0114": [
+      "C1",
+      "D5",
+      "D8",
+      "M2",
+      "M3",
+      "S3"
+    ],
+    "layout_0115": [
+      "A4",
+      "B3",
+      "D4",
+      "D5",
+      "F3",
+      "S4"
+    ],
+    "layout_0116": [
+      "A3",
+      "C7",
+      "D1",
+      "D3",
+      "FOY",
+      "O2"
+    ],
+    "layout_0117": [
+      "A1",
+      "D2",
+      "D3",
+      "D5",
+      "F3",
+      "S3"
+    ],
+    "layout_0118": [
+      "A3",
+      "C10",
+      "C2",
+      "C3",
+      "D8",
+      "S1"
+    ],
+    "layout_0119": [
+      "A2",
+      "C8",
+      "D1",
+      "D3",
+      "O1",
+      "O3"
+    ],
+    "layout_0120": [
+      "B1",
+      "C6",
+      "D3",
+      "D9",
+      "F1",
+      "M1"
+    ],
+    "layout_0121": [
+      "A3",
+      "C2",
+      "C4",
+      "C9",
+      "F2",
+      "S4"
+    ],
+    "layout_0122": [
+      "A2",
+      "C1",
+      "C9",
+      "D2",
+      "D7",
+      "FOY"
+    ],
+    "layout_0123": [
+      "A3",
+      "C10",
+      "C2",
+      "C6",
+      "F1",
+      "S2"
+    ],
+    "layout_0124": [
+      "C2",
+      "C5",
+      "C6",
+      "D5",
+      "D9",
+      "F1"
+    ],
+    "layout_0125": [
+      "A1",
+      "A3",
+      "C9",
+      "D6",
+      "O1",
+      "S4"
+    ],
+    "layout_0126": [
+      "A5",
+      "C2",
+      "C6",
+      "C9",
+      "D7",
+      "FOY"
+    ],
+    "layout_0127": [
+      "C3",
+      "C9",
+      "D8",
+      "M1",
+      "S2",
+      "S3"
+    ],
+    "layout_0128": [
+      "A6",
+      "C4",
+      "D1",
+      "D2",
+      "F3",
+      "M1"
+    ],
+    "layout_0129": [
+      "A3",
+      "C5",
+      "D7",
+      "F3",
+      "M3",
+      "S1"
+    ],
+    "layout_0130": [
+      "C7",
+      "C9",
+      "D5",
+      "D7",
+      "O1",
+      "O2"
+    ],
+    "layout_0131": [
+      "A1",
+      "C9",
+      "D3",
+      "M1",
+      "S2",
+      "S4"
+    ],
+    "layout_0132": [
+      "A1",
+      "C7",
+      "D4",
+      "D5",
+      "FOY",
+      "M2"
+    ],
+    "layout_0133": [
+      "C5",
+      "D5",
+      "D6",
+      "F1",
+      "O3",
+      "S2"
+    ],
+    "layout_0134": [
+      "A1",
+      "A5",
+      "C3",
+      "C7",
+      "D2",
+      "D8"
+    ],
+    "layout_0135": [
+      "A3",
+      "C1",
+      "C10",
+      "M1",
+      "S2",
+      "S4"
+    ],
+    "layout_0136": [
+      "A1",
+      "C1",
+      "C4",
+      "C8",
+      "D6",
+      "M2"
+    ],
+    "layout_0137": [
+      "C3",
+      "C4",
+      "C6",
+      "C8",
+      "C9",
+      "D1"
+    ],
+    "layout_0138": [
+      "A1",
+      "A4",
+      "C5",
+      "C7",
+      "D5",
+      "M3"
+    ],
+    "layout_0139": [
+      "A1",
+      "C10",
+      "C7",
+      "FOY",
+      "M1",
+      "S2"
+    ],
+    "layout_0140": [
+      "A3",
+      "C2",
+      "D6",
+      "FOY",
+      "O1",
+      "S1"
+    ],
+    "layout_0141": [
+      "A3",
+      "A4",
+      "C10",
+      "C5",
+      "C7",
+      "O1"
+    ],
+    "layout_0142": [
+      "D3",
+      "D4",
+      "D7",
+      "F1",
+      "M3",
+      "S2"
+    ],
+    "layout_0143": [
+      "A3",
+      "C1",
+      "C10",
+      "C3",
+      "M3",
+      "S1"
+    ],
+    "layout_0144": [
+      "A2",
+      "A5",
+      "C9",
+      "D4",
+      "FOY",
+      "M1"
+    ],
+    "layout_0145": [
+      "B2",
+      "D1",
+      "D5",
+      "D7",
+      "M3",
+      "O1"
+    ],
+    "layout_0146": [
+      "C5",
+      "D2",
+      "D3",
+      "D5",
+      "M1",
+      "S2"
+    ],
+    "layout_0147": [
+      "A4",
+      "B2",
+      "B3",
+      "C3",
+      "D2",
+      "O1"
+    ],
+    "layout_0148": [
+      "A2",
+      "A6",
+      "B1",
+      "C8",
+      "M1",
+      "S2"
+    ],
+    "layout_0149": [
+      "A3",
+      "B2",
+      "C7",
+      "O1",
+      "S2",
+      "S4"
+    ],
+    "layout_0150": [
+      "A1",
+      "A3",
+      "A5",
+      "B2",
+      "C7",
+      "FOY"
+    ],
+    "layout_0151": [
+      "A5",
+      "C10",
+      "C4",
+      "C8",
+      "D4",
+      "S1"
+    ],
+    "layout_0152": [
+      "A1",
+      "C8",
+      "D6",
+      "D7",
+      "D8",
+      "S1"
+    ],
+    "layout_0153": [
+      "A4",
+      "C8",
+      "D2",
+      "D3",
+      "D6",
+      "D8"
+    ],
+    "layout_0154": [
+      "A6",
+      "C8",
+      "D9",
+      "F1",
+      "O1",
+      "O3"
+    ],
+    "layout_0155": [
+      "B2",
+      "C10",
+      "C2",
+      "C3",
+      "D9",
+      "FOY"
+    ],
+    "layout_0156": [
+      "A1",
+      "C9",
+      "D4",
+      "F2",
+      "O2",
+      "S4"
+    ],
+    "layout_0157": [
+      "C2",
+      "C4",
+      "C6",
+      "D5",
+      "F3",
+      "O2"
+    ],
+    "layout_0158": [
+      "C3",
+      "F3",
+      "O1",
+      "O3",
+      "S1",
+      "S3"
+    ],
+    "layout_0159": [
+      "B3",
+      "C3",
+      "C6",
+      "D6",
+      "F1",
+      "FOY"
+    ],
+    "layout_0160": [
+      "A6",
+      "B3",
+      "C10",
+      "F2",
+      "M1",
+      "O3"
+    ],
+    "layout_0161": [
+      "A2",
+      "A5",
+      "C10",
+      "C3",
+      "C6",
+      "D3"
+    ],
+    "layout_0162": [
+      "A1",
+      "D1",
+      "D3",
+      "D9",
+      "F2",
+      "M3"
+    ],
+    "layout_0163": [
+      "A1",
+      "B3",
+      "D3",
+      "D5",
+      "D8",
+      "D9"
+    ],
+    "layout_0164": [
+      "B1",
+      "D1",
+      "F3",
+      "FOY",
+      "O1",
+      "S1"
+    ],
+    "layout_0165": [
+      "B2",
+      "C2",
+      "C4",
+      "F1",
+      "F3",
+      "O1"
+    ],
+    "layout_0166": [
+      "B1",
+      "C1",
+      "C10",
+      "C7",
+      "C9",
+      "D7"
+    ],
+    "layout_0167": [
+      "A6",
+      "C6",
+      "D3",
+      "D6",
+      "S1",
+      "S2"
+    ],
+    "layout_0168": [
+      "C3",
+      "C8",
+      "D5",
+      "F2",
+      "O1",
+      "S4"
+    ],
+    "layout_0169": [
+      "C5",
+      "D5",
+      "F2",
+      "FOY",
+      "M1",
+      "O1"
+    ],
+    "layout_0170": [
+      "C10",
+      "C2",
+      "C7",
+      "FOY",
+      "M2",
+      "O3"
+    ],
+    "layout_0171": [
+      "C3",
+      "C5",
+      "D2",
+      "D3",
+      "FOY",
+      "M1"
+    ],
+    "layout_0172": [
+      "B2",
+      "C10",
+      "C5",
+      "C8",
+      "D2",
+      "S4"
+    ],
+    "layout_0173": [
+      "C4",
+      "D5",
+      "D7",
+      "F1",
+      "O2",
+      "O3"
+    ],
+    "layout_0174": [
+      "A1",
+      "A3",
+      "B3",
+      "F2",
+      "O1",
+      "O2"
+    ],
+    "layout_0175": [
+      "B2",
+      "C5",
+      "C6",
+      "D9",
+      "F2",
+      "S2"
+    ],
+    "layout_0176": [
+      "A4",
+      "C2",
+      "D1",
+      "D2",
+      "F3",
+      "FOY"
+    ],
+    "layout_0177": [
+      "A4",
+      "B1",
+      "C6",
+      "D3",
+      "F2",
+      "O1"
+    ],
+    "layout_0178": [
+      "A3",
+      "A5",
+      "C3",
+      "C8",
+      "D3",
+      "D9"
+    ],
+    "layout_0179": [
+      "A2",
+      "C6",
+      "D1",
+      "D2",
+      "M1",
+      "S2"
+    ],
+    "layout_0180": [
+      "A6",
+      "C6",
+      "C8",
+      "D5",
+      "D8",
+      "S4"
+    ],
+    "layout_0181": [
+      "B2",
+      "C9",
+      "D5",
+      "M2",
+      "O3",
+      "S3"
+    ],
+    "layout_0182": [
+      "A6",
+      "B2",
+      "C10",
+      "C6",
+      "M2",
+      "O1"
+    ],
+    "layout_0183": [
+      "B2",
+      "C10",
+      "M3",
+      "O1",
+      "S2",
+      "S3"
+    ],
+    "layout_0184": [
+      "A2",
+      "C1",
+      "C2",
+      "C4",
+      "C8",
+      "S2"
+    ],
+    "layout_0185": [
+      "A6",
+      "B3",
+      "C9",
+      "D8",
+      "D9",
+      "O3"
+    ],
+    "layout_0186": [
+      "A1",
+      "A4",
+      "B1",
+      "C1",
+      "M1",
+      "O1"
+    ],
+    "layout_0187": [
+      "A4",
+      "B3",
+      "D5",
+      "D7",
+      "F2",
+      "M2"
+    ],
+    "layout_0188": [
+      "C2",
+      "C7",
+      "D1",
+      "D8",
+      "S2",
+      "S3"
+    ],
+    "layout_0189": [
+      "C5",
+      "C8",
+      "D6",
+      "O1",
+      "O2",
+      "S3"
+    ],
+    "layout_0190": [
+      "A2",
+      "A6",
+      "B3",
+      "C4",
+      "D6",
+      "D9"
+    ],
+    "layout_0191": [
+      "A3",
+      "A4",
+      "C4",
+      "D8",
+      "M2",
+      "O1"
+    ],
+    "layout_0192": [
+      "A4",
+      "C4",
+      "D1",
+      "D4",
+      "F2",
+      "M2"
+    ],
+    "layout_0193": [
+      "A2",
+      "C10",
+      "D1",
+      "D3",
+      "D9",
+      "M3"
+    ],
+    "layout_0194": [
+      "C9",
+      "D6",
+      "FOY",
+      "M1",
+      "O1",
+      "S1"
+    ],
+    "layout_0195": [
+      "D3",
+      "D8",
+      "D9",
+      "F2",
+      "O2",
+      "S3"
+    ],
+    "layout_0196": [
+      "A2",
+      "C10",
+      "D2",
+      "D6",
+      "O1",
+      "S4"
+    ],
+    "layout_0197": [
+      "A1",
+      "A5",
+      "A6",
+      "C10",
+      "C5",
+      "C9"
+    ],
+    "layout_0198": [
+      "A4",
+      "A5",
+      "C8",
+      "D7",
+      "M2",
+      "O2"
+    ],
+    "layout_0199": [
+      "A3",
+      "A4",
+      "A5",
+      "C4",
+      "D6",
+      "S3"
+    ]
+  }
+}

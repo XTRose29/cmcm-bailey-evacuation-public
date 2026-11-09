@@ -1,0 +1,25 @@
+design,managers,led,barriers,T,cost_default,pareto_default,share_on_front,dominated_for_any_cost
+15 mgr + barriers,15,False,True,261.95000000000005,44912.73,True,1.0,False
+6 mgr,6,False,False,265.48,17274.9,True,1.0,False
+6 mgr + LED,6,True,False,262.0266666666667,19864.9,True,0.9985,False
+6 mgr + barriers,6,False,True,264.8233333333334,19000.38,True,0.702,False
+8 mgr + barriers,8,False,True,263.00333333333333,24758.68,False,0.094,False
+8 mgr,8,False,False,265.3333333333333,23033.2,False,0.009,False
+7 mgr + LED,7,True,False,262.0266666666667,22744.05,False,0.0,False
+8 mgr + LED + barriers,8,True,True,262.28,27348.68,False,0.0,False
+10 mgr + LED + barriers,10,True,True,262.28,33106.98,False,0.0,False
+12 mgr + LED + barriers,12,True,True,262.28,38865.280000000006,False,0.0,False
+10 mgr + barriers,10,False,True,263.00333333333333,30516.98,False,0.0,False
+12 mgr + barriers,12,False,True,263.00333333333333,36275.280000000006,False,0.0,False
+6 mgr + LED + barriers,6,True,True,263.3366666666667,21590.38,False,0.0,False
+7 mgr + LED + barriers,7,True,True,263.52333333333337,24469.53,False,0.0,False
+15 mgr + LED,15,True,False,263.7866666666667,45777.25,False,0.0,False
+8 mgr + LED,8,True,False,263.87333333333333,25623.2,False,0.0,False
+10 mgr + LED,10,True,False,263.87333333333333,31381.5,False,0.0,False
+12 mgr + LED,12,True,False,263.87333333333333,37139.8,False,0.0,False
+15 mgr + LED + barriers,15,True,True,264.31666666666666,47502.73,False,0.0,False
+15 mgr,15,False,False,264.5266666666667,43187.25,False,0.0,False
+7 mgr + barriers,7,False,True,264.8233333333334,21879.53,False,0.0,False
+10 mgr,10,False,False,265.3333333333333,28791.5,False,0.0,False
+12 mgr,12,False,False,265.3333333333333,34549.8,False,0.0,False
+7 mgr,7,False,False,265.48,20154.05,False,0.0,False

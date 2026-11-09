@@ -1,0 +1,10 @@
+scenario,Model default (clear width),lab bottleneck 1.9 p/(m·s),prior baseline 1.30 p/(m·s)
+normal,329.50000000000006,207.5,264.90000000000003
+concert,227.70000000000002,234.1,221.3
+blocked,388.70000000000005,224.8,255.0
+lecture,295.6,295.6,295.6
+barriers,227.6,221.3,221.3
+led,221.3,221.3,221.3
+combo,221.3,221.3,221.3
+lecture_led,295.6,295.6,295.6
+lecture_barriers,295.6,295.6,295.6

@@ -1,0 +1,33 @@
+{
+  "source_commit": "e4201d3239bdb51d21e73e7aefd3ce81a6dc0d1f",
+  "files_with_comment_docstring_or_label_translation": [
+    "model_v2/run.py",
+    "model_v2/make_figures.py",
+    "model_v2/bailey/scenarios.py",
+    "model_v2/bailey/config.py",
+    "model_v2/bailey/analysis.py",
+    "model_v2/bailey/building.py",
+    "model_v2/bailey/markov.py",
+    "model_v2/bailey/paper.py",
+    "model_v2/bailey/flow.py",
+    "model_v2/bailey/export.py",
+    "model_v2/bailey/uncertainty.py",
+    "model_v2/bailey/integer.py",
+    "model_v2/bailey/montecarlo.py",
+    "model_v2/bailey/routing.py",
+    "model_v2/bailey/manager_search.py",
+    "model_v2/bailey/cost.py",
+    "model_v2/bailey/floorplan.py",
+    "model_v2/bailey/viz.py",
+    "model_v2/bailey/guidance.py",
+    "model_v2/bailey/validation.py",
+    "model_v2/bailey/plugins/randomness.py",
+    "model_v2/bailey/plugins/queueing.py",
+    "model_v2/tools/export_web.py",
+    "model_v2/experiments/blocked_rebalance.py",
+    "model_v2/tests/test_model.py",
+    "model_v2/tests/test_extensions.py",
+    "model_v2/tests/test_followups.py",
+    "results/cluster_formal_20261108/cluster_driver.py"
+  ]
+}

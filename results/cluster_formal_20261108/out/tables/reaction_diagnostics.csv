@@ -1,0 +1,4 @@
+event,mean,sd,p95,probability_all_reacted_by_180,meaning
+concert_emergency,56.08116407998868,25.919616024784645,104.9764034504304,0.06539508620257993,IID pre-movement-only upper bound; ignores travel and queues
+normal_dismissal,36.79658071529104,18.269446281340237,68.28981555540707,1.0,IID pre-movement-only upper bound; ignores travel and queues
+lecture_emergency,73.5,42.4352447854375,154.2469437358637,5.036795691048567e-14,IID pre-movement-only upper bound; ignores travel and queues
