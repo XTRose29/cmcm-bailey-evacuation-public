@@ -1,0 +1,203 @@
+{
+  "source_commit": "e4201d3239bdb51d21e73e7aefd3ce81a6dc0d1f",
+  "checked_files": [
+    "model/bailey/__init__.py",
+    "model/bailey/analysis.py",
+    "model/bailey/building.py",
+    "model/bailey/config.py",
+    "model/bailey/cost.py",
+    "model/bailey/export.py",
+    "model/bailey/floorplan.py",
+    "model/bailey/flow.py",
+    "model/bailey/guidance.py",
+    "model/bailey/integer.py",
+    "model/bailey/manager_search.py",
+    "model/bailey/markov.py",
+    "model/bailey/montecarlo.py",
+    "model/bailey/paper.py",
+    "model/bailey/plugins/__init__.py",
+    "model/bailey/plugins/queueing.py",
+    "model/bailey/plugins/randomness.py",
+    "model/bailey/routing.py",
+    "model/bailey/scenarios.py",
+    "model/bailey/uncertainty.py",
+    "model/bailey/validation.py",
+    "model/bailey/viz.py",
+    "model/experiments/blocked_rebalance.py",
+    "model/experiments/check_resolution.py",
+    "model/launch_overnight.py",
+    "model/make_figures.py",
+    "model/run.py",
+    "model/run_overnight.py",
+    "model/search_managers.py",
+    "model/tests/test_extensions.py",
+    "model/tests/test_followups.py",
+    "model/tests/test_integer.py",
+    "model/tests/test_model.py",
+    "model/tests/test_overnight.py",
+    "model/tests/test_setup.py",
+    "model/tools/export_web.py"
+  ],
+  "method": "Compare syntax trees after removing standalone documentation strings; permit only Chinese-to-English display/error string translations. For translated f-strings, check that the set of embedded expressions is unchanged. Numeric values, computational expressions, control flow, calls and assertions must match.",
+  "result": "pass",
+  "translated_display_labels": 39,
+  "changes": [
+    {
+      "location": "model/bailey/building.py/body/9/body/7/value/elts/0/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/7/value/elts/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/7/value/elts/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/8/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/10/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/13/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/14/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/15/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/17/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/18/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/20/body/0/value/args/0/args/1",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/21/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/22/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/23/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/24/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/25/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/26/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/27/value/args/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/28/value/elts/0/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/28/value/elts/1/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/28/value/elts/2/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/28/value/elts/3/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/9/body/28/value/elts/4/args/1/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/building.py/body/10/body/3/body/0/body/0/exc/args/0",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/markov.py/body/9/body/0/msg/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/markov.py/body/11/body/6/body/1/exc/args/0",
+      "change": "English formatted display/error label"
+    },
+    {
+      "location": "model/bailey/markov.py/body/16/body/18/body/0/exc/args/0/left/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/montecarlo.py/body/23/body/0/msg/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/0/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/1/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/2/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/3/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/4/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/5/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/6/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/7/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/8/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/bailey/scenarios.py/body/19/value/values/9/args/2/value",
+      "change": "English display/error label"
+    },
+    {
+      "location": "model/make_figures.py/body/77/body/13/body/0/body/0/value/args/0/value",
+      "change": "English display/error label"
+    }
+  ],
+  "note": "Historical audit before directory cleanup; some optional tools were subsequently removed. See reorganization_audit.json for the retained model files."
+}

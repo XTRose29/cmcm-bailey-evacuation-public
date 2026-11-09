@@ -11,8 +11,8 @@ def api(args,payload=None):
     return json.loads(result.stdout)
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--publish',action='store_true');a=p.parse_args()
-    subprocess.run([sys.executable,str(ROOT/'web_v2/scripts/build.py'),'--check'],check=True)
-    data=(ROOT/'web_v2/index.html').read_bytes();endpoint=f'repos/{REPO}/contents/{TARGET}'
+    subprocess.run([sys.executable,str(ROOT/'web/scripts/build.py'),'--check'],check=True)
+    data=(ROOT/'web/index.html').read_bytes();endpoint=f'repos/{REPO}/contents/{TARGET}'
     current=api([endpoint+'?ref='+BRANCH])
     local_sha=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
     if current['sha']==local_sha:print('Already synchronized:',URL);return

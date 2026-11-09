@@ -1,0 +1,23 @@
+{
+  "source_translation_audit": "pass: 36 Python files; only documentation and English display/error labels changed",
+  "main_replicates": 2700,
+  "deterministic_replays_matching_archive": 9,
+  "model_tests": {
+    "passed": 96,
+    "failed": 1,
+    "known_failure": "test_time_step_converged",
+    "observed_zero_wheelchair_T_dt_0_1": 227.7,
+    "observed_zero_wheelchair_T_dt_0_05": 213.65,
+    "tolerance_seconds": 2,
+    "note": "The test uses the zero-wheelchair scenario default. Paper deterministic replays explicitly include three wheelchair users. No test tolerance was changed."
+  },
+  "local_verification_environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.9.4",
+    "networkx": "3.2.1"
+  },
+  "note": "This records publication checks, not the archived cluster environment. Use requirements.txt and the original manifest for the formal environment."
+}

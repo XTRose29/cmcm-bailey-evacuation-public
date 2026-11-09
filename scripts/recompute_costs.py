@@ -2,12 +2,12 @@
 from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'model_v2'))
+sys.path.insert(0,str(ROOT/'model'))
 import pandas as pd
 from bailey.config import DEFAULT, COST_RANGES
 from bailey.cost import design_table, cost_sensitivity
-rows=pd.read_csv(ROOT/'results/cluster_formal_20261108/out/tables/cost_pareto.csv')[['managers','led','barriers','T_mc']].to_dict('records')
-out=ROOT/'results/paper_cost_update'
+rows=pd.read_csv(ROOT/'results/formal/tables/cost_pareto.csv')[['managers','led','barriers','T_mc']].to_dict('records')
+out=ROOT/'results/costs'
 out.mkdir(exist_ok=True)
 design_table(rows,DEFAULT,obj='T_mc').to_csv(out/'cost_recomputed_latest.csv',index=False)
 for name,df in cost_sensitivity(rows,DEFAULT,ranges=COST_RANGES,n_draws=2000,seed=2026).items():

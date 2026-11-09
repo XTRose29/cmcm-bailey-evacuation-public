@@ -4,6 +4,6 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 outputs/
-model_v2/outputs/
+model/outputs/
 *.pkl
 *.log

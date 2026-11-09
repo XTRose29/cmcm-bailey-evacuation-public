@@ -1,6 +1,6 @@
 # Formal experiment plan
 
-Use `model_v2/run_overnight.py` as the executable specification. The archived run uses 0.1 s steps, a 1,800 s horizon, batch size 25, and three wheelchair users unless a stage explicitly specifies otherwise. Population is always 1,329. Read completed stage records in the archived `status.json`.
+Use `model/run_overnight.py` as the executable specification. The archived run uses 0.1 s steps, a 1,800 s horizon, batch size 25, and three wheelchair users unless a stage explicitly specifies otherwise. Population is always 1,329. Read completed stage records in the archived `status.json`.
 
 | Stage | Design and purpose |
 |---|---|
@@ -27,13 +27,13 @@ The complete parameter grids and replicate counts for subsidiary checks are defi
 From the repository root:
 
 ```bash
-python model_v2/run_overnight.py --out outputs/reproduction --workers 8 --batch-size 25 \
+python model/run_overnight.py --out outputs/reproduction --workers 8 --batch-size 25 \
   --commit "$(git rev-parse HEAD)"
 ```
 
 Use a fresh output directory. Completed stages are checkpointed and the same command resumes unfinished work. A `--smoke` run is for setup checks, not paper results. Changing worker count does not change the prescribed seed mapping. Changing batch size changes the block seed allocation and therefore the sample realizations.
 
-The optional cluster driver is preserved at `results/cluster_formal_20261108/cluster_driver.py`. Run it with `model_v2` as the working directory; see `--help`. It changes scheduling and cache warm-up, not model equations. Site-specific Slurm account settings are intentionally not included.
+The optional cluster driver is preserved at `scripts/cluster_driver.py`. Run it with `model` as the working directory; see `--help`. It changes scheduling and cache warm-up, not model equations. Site-specific Slurm account settings are intentionally not included.
 
 ## Seeds and reporting
 
@@ -43,4 +43,4 @@ Report mean, median, 95th percentile, completion/timeout rate, probability of fi
 
 ## Cost update
 
-The archived formal manifest contains the historical cost assumptions. Updated cost inputs are in `model_v2/bailey/config.py`; `scripts/recompute_costs.py` applies them to the same archived evacuation times. The resulting three CSV files in `results/paper_cost_update/` are the revised paper cost analysis. They include 2,000 cost-only uncertainty draws with seed 2026; these are not extra evacuation simulations.
+The archived formal manifest contains the historical cost assumptions. Updated cost inputs are in `model/bailey/config.py`; `scripts/recompute_costs.py` applies them to the same archived evacuation times. The resulting three CSV files in `results/costs/` are the revised paper cost analysis. They include 2,000 cost-only uncertainty draws with seed 2026; these are not extra evacuation simulations.
