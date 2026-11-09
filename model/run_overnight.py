@@ -1,7 +1,6 @@
 """Checkpointed overnight experiments; orchestration only, never edits model parameters.
 
-Run from a frozen source copy. See ../docs/EXPERIMENTS.md for populations, seeds,
-priorities, stopping rules and the distinction between selection and evaluation.
+Run from a frozen source copy. Experiment settings and seeds are defined below.
 """
 from __future__ import annotations
 import os

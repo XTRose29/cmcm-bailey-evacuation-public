@@ -1,78 +1,31 @@
 # Bailey Hall Evacuation
 
-A network model of 1,329 people leaving Bailey Hall under normal and emergency conditions. The Python simulation combines integer populations, route choices, walking stages, capacity-limited queues and Monte Carlo sampling.
+Python model and results for 1,329 people leaving Bailey Hall.
 
-**[Interactive visualization](https://xtrose29.github.io/bailey-evacuation/index.html)** · [Model](docs/MODEL.md) · [Experiments](docs/EXPERIMENTS.md) · [Reproducibility](docs/REPRODUCIBILITY.md)
+**[Interactive visualization](https://xtrose29.github.io/bailey-evacuation/index.html)**
 
-## Repository structure
+- `model/`: model implementation and experiment runners.
+- `results/formal/`: archived simulation outcomes, scenario settings and manager-placement results.
+- `results/costs/`: updated cost estimates.
+- `web/`: English visualization, source and recorded model data.
 
-```text
-model/       Python model, experiment runners and tests
-results/     Formal experiment tables and revised cost analysis
-web/         Self-contained visualization and replay data
-scripts/     Data verification, cost updates and deployment
-docs/        Model, experiment and reproducibility notes
-```
+## Run
 
-The repository contains code and research data. Manuscript files, LaTeX appendices and pre-rendered paper figures are maintained separately.
-
-## Quick start
-
-Use Python 3.10 or newer. Dependencies are pinned to the numerical libraries used for the formal Linux experiments.
+Use Python 3.10 or newer.
 
 ```bash
-git clone https://github.com/XTRose29/cmcm-bailey-evacuation-public.git
-cd cmcm-bailey-evacuation-public
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -r requirements.txt
-python model/run.py params
-python scripts/verify_release.py
+python model/run_overnight.py --out outputs/reproduction --workers 8 --batch-size 25 --stages deterministic,main
 ```
 
-On Windows, activate the environment with `.venv\Scripts\activate`.
+Omit `--stages` to run all experiments. The formal runner uses 0.1 s steps and three wheelchair users within the total population of 1,329. Individual scenarios run through `model/run.py` generally default to zero wheelchair users.
 
-## Run experiments
-
-The primary experiments use 0.1 s time steps and three wheelchair users in M2, included in the total population of 1,329.
+Update costs using the archived simulation times:
 
 ```bash
-python model/run_overnight.py --out outputs/reproduction --workers 8 \
-  --batch-size 25 --stages deterministic,main
+python model/recompute_costs.py
 ```
 
-Omit `--stages` to run the full experiment plan. Use a new output directory; completed stages are checkpointed. Keep the seeds and batch size unchanged when reproducing the archived sampling scheme. The simpler `model/run.py` interface uses zero-wheelchair defaults for most individual scenarios.
+Open `web/index.html` locally, or rebuild it with `python web/scripts/build.py`. Use `python web/scripts/export_data.py --refresh` to regenerate the deterministic replays. Replay times are distinct from the archived Monte Carlo averages.
 
-## Results
-
-| Situation | Mean clearance time (s), 300 runs |
-|---|---:|
-| Normal concert dismissal | 413.21 |
-| Concert emergency | 258.59 |
-| Lecture emergency | 331.83 |
-| Main exit blocked | 416.14 |
-| Concert with barriers | 258.51 |
-| Concert with LEDs | 257.10 |
-| Concert with barriers and LEDs | 256.69 |
-
-Full summaries and individual outcomes are in [`results/formal/tables/`](results/formal/tables). Manager search records are in [`results/formal/manager_search/`](results/formal/manager_search). Updated annual costs are in [`results/costs/`](results/costs); these supersede the historical cost columns in the formal archive.
-
-## Visualization
-
-Open `web/index.html` locally or use the [live page](https://xtrose29.github.io/bailey-evacuation/index.html). The page displays nine deterministic Python-model replays and separate archived Monte Carlo statistics.
-
-```bash
-python web/scripts/build.py
-python web/scripts/build.py --check
-```
-
-To regenerate replay data from the model, run `python web/scripts/export_data.py --refresh`. To update costs without rerunning evacuations, run `python scripts/recompute_costs.py`.
-
-## Checks and limitations
-
-```bash
-python -m pytest model/tests -q
-python scripts/verify_release.py
-```
-
-The original time-step convergence test is retained and can fail; the publication check recorded 96 passes and this one known failure. The model has not been calibrated against a measured full evacuation of Bailey Hall. See [reproducibility and validation notes](docs/REPRODUCIBILITY.md) for the exact source versions, environment and numerical limitations.
+The formal simulation source was `9d76e44`; final cost inputs came from `e4201d3`. The historical manifest retains the earlier cost assumptions; use `results/costs/` for updated costs. The model has unresolved time-step sensitivity, documented by the numerical results in `results/formal/tables/`, and has not been calibrated against a full measured evacuation.

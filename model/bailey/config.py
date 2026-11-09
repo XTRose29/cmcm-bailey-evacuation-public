@@ -237,7 +237,7 @@ COMPLIANCE = {
 BROADCAST_DELAY = 20.0  # delay before blocked-exit broadcast [TEAM-WEB]
 
 
-#    Sources checked 2026-11-08 (BibTeX keys in docs/references.bib). Market prices are
+#    Sources checked 2026-11-08. Market prices are
 #    vendor/retail estimates, not Bailey Hall quotes; quantities (300 m LED, ~60 LED runs,
 #    20 posts, 2 staff-hours, events per year) are [ASSUMED].
 
