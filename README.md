@@ -28,4 +28,6 @@ python model/recompute_costs.py
 
 Open `web/index.html` locally, or rebuild it with `python web/scripts/build.py`. Use `python web/scripts/export_data.py --refresh` to regenerate the deterministic replays. Replay times are distinct from the archived Monte Carlo averages.
 
+The visualization retains the seat-row layout and individual moving dots. `web/scripts/person_tracks.py` reconstructs display identities from the final model's integer transfers, checking population counts at every step. `web/src/layout.js` provides drawing geometry; `web/src/people.js` places the dots along schematic paths. These display paths do not add a second movement model or change the saved results.
+
 The formal simulation source was `9d76e44`; final cost inputs came from `e4201d3`. The historical manifest retains the earlier cost assumptions; use `results/costs/` for updated costs. The model has unresolved time-step sensitivity, documented by the numerical results in `results/formal/tables/`, and has not been calibrated against a full measured evacuation.

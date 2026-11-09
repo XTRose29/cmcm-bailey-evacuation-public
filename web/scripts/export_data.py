@@ -13,6 +13,7 @@ import pandas as pd
 from bailey.config import DEFAULT, MANAGER_DEFAULT_NODES
 from bailey.scenarios import run, SCENARIOS
 from bailey.validation import wheelchair_report
+from person_tracks import person_tracks
 
 TABLES=ROOT/'results/formal/tables'
 DEST=ROOT/'web/data'
@@ -36,7 +37,7 @@ def main():
           'numerical':records(TABLES/'numerical_resolution_summary.csv'),
           'cost':records(ROOT/'results/costs/cost_recomputed_latest.csv')}
     for name in reference.index:
-        if name in cached:
+        if name in cached and 'person_tracks' in cached[name]:
             replay=cached[name]
         else:
             print('Exporting',name,flush=True)
@@ -55,7 +56,8 @@ def main():
                 'occupancy':res.occ[ix].astype(int).tolist(),
                 'queue':res.queue_in[ix].astype(int).tolist(),
                 'inside':res.remaining_inside[ix].astype(int).tolist(),
-                'to_street':res.remaining[ix].astype(int).tolist()}
+                'to_street':res.remaining[ix].astype(int).tolist(),
+                'person_tracks':person_tracks(res)}
         expected=float(reference.loc[name,'T'])
         if abs(replay['T']-expected)>1e-6:
             raise RuntimeError(f'{name}: replay {replay["T"]} does not match archived {expected}')
